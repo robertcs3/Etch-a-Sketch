@@ -1,0 +1,25 @@
+
+#container{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.row {
+    display: flex;
+    font-size: 15px;
+    text-align: center;
+    color: red
+}
+
+.cell {
+    width: 30px;
+    height: 30px;
+    margin: 1px;
+    border: 1px solid black;
+}
+
+.color {
+    background-color: black;
+}
