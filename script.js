@@ -20,6 +20,22 @@ function makeGrid(rows, cols){
 makeGrid(16, 16);
 
 
+/* Select square */
+const item = document.querySelectorAll('.grid-item');
+
+
+item.forEach(square => {
+
+    square.addEventListener('mouseover', e => {
+        square.setAttribute('style', 'background: black;')
+    })
+
+});
+
+
+
+
+
 
 
 
