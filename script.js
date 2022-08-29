@@ -1,36 +1,33 @@
 
-/* Select our grid container */
-const container = document.getElementById('grid-container');
+
+/* Function that will create grid with specified size */
+
+function makeGrid (size) {
+    const grid = document.getElementById('grid-container');
+
+    grid.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
+    grid.style.gridTemplateRows = `repeat(${size}, 1fr)`;
 
 
-/* Create grid*/
-
-function makeGrid(rows, cols){
-    container.style.setProperty('--grid-rows', rows);
-    container.style.setProperty('--grid-cols', cols);
-
-    for (let s = 0; s < (rows * cols); s++){
-        let square = document.createElement('div');
-        square.innerText = (s + 1);
-        container.appendChild(square).className = "grid-item";
+    for (let i = 0; i < size * size; i++) {
+        const cell = document.createElement('div');
+        cell.style.backgroundColor = "grey";
+        cell.innerText = (i + 1);
+        grid.appendChild(cell);
     }
+
 }
 
-/* Establish initial 16 x 16 grid */
-makeGrid(16, 16);
 
 
-/* Select square */
-const item = document.querySelectorAll('.grid-item');
 
 
-item.forEach(square => {
 
-    square.addEventListener('mouseover', e => {
-        square.setAttribute('style', 'background: black;')
-    })
 
-});
+makeGrid(16);
+
+
+
 
 
 

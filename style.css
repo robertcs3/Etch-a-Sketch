@@ -1,20 +1,44 @@
-:root{
-    --grid-cols: 1;
-    --grid-rows: 1;
-}
-
 #grid-container{
+    height: 480px;
+    width: 480px;
     display: grid;
-    grid-gap: 1em;
-    grid-template-rows: repeat(var(--grid-rows), 1fr);
-    grid-template-columns: repeat(var(--grid-cols), 1fr);
 }
 
+.flex-container{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 
-.grid-item{
-    padding: 1em;
-    border: 1px solid #ddd;
+.title{
     text-align: center;
+    font-size: 64px;
 }
+
+.buttons{
+    margin-bottom: 64px;
+}
+
+button{
+    border: 1px solid red;
+    border-radius: 5px;
+    padding: 12px;
+    background-color: white;
+    cursor: pointer;
+}
+
+
+button:hover{
+    background-color: black;
+    color: white;
+    transition: 1s;
+    transform: scale(1.5);
+}
+
+
+
+
 
 
