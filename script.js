@@ -15,25 +15,44 @@ function makeGrid (size) {
 
     for (let i = 0; i < size * size; i++) {
         const cell = document.createElement('div');
-        cell.classList.add("grid-item");
-        cell.style.backgroundColor = "grey";
-        cell.innerText = (i + 1);
-        grid.appendChild(cell);
+        cell.addEventListener('mouseover', () => cell.style.backgroundColor = "black");
+        cell.style.backgroundColor = "white";
+        grid.insertAdjacentElement("beforeend", cell);
     }
 
 }
 
 
+function clear (){
+    const grid = document.getElementById('grid-container');
+
+    const div = grid.querySelectorAll('div');
+    
+    div.forEach(div => div.style.backgroundColor = "white");
+}
+
 /* Set initial grid size */
 makeGrid(16);
 
 
-const button = document.querySelector('button');
+
+const resize = document.getElementById('resize');
+
+resize.addEventListener('click', input);
+
+const clearGrid = document.getElementById('clear');
+
+clearGrid.addEventListener('click', clear);
+
+
+
+
+
 
 
 /* get input of the user */
 function input () {
-    let answer = prompt("Enter a grid size dimension (min: 2 , max: 100");
+    let answer = prompt("Enter a grid size dimension (min: 2 , max: 100)");
 
     if (answer < 2 || answer > 100) {
         alert("Input error!");
@@ -41,11 +60,13 @@ function input () {
     }
 
     makeGrid(answer);
+
+    return answer;
+   
 }
 
 
 
-button.addEventListener('click', input);
 
 
 
